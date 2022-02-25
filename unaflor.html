@@ -1,0 +1,37 @@
+<!-- 
+Programador: Vanessa Burbano.
+Fecha: 21/02/2022
+Grupo: PP - ONE (PARTE3)
+Descripción:  Diseñando una flor.
+              En este nuevo desafío vamos a diseñar una muna flor de cuatro pétalos
+              que tenga rojo en el centro, naranja a la izquierda, negro a la derecha
+              amarillo arriba y azul abajo.
+-->
+<canvas width="600" height="400"></canvas>
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "lightgray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCirculo(x, y, radio, color) {
+
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2*3.14);
+        pincel.fill();
+    }
+    
+    function dibujarFlor(color_center,color_botton,color_top,color_left,color_right)
+    {
+        dibujarCirculo(300,200,50,color_center);
+        dibujarCirculo(300,300,50,color_botton);
+        dibujarCirculo(300,100,50,color_top);
+        dibujarCirculo(400,200,50,color_right);
+        dibujarCirculo(200,200,50,color_left);
+    }
+
+    dibujarFlor("red","blue","yellow","orange","black");
+    
+
+</script>
